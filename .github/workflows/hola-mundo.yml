@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "aprendiendo-github-actions" ]   
 jobs:            
-	hola-mundo:  
+	holamundo:
 		runs-on: ubuntu-latest 
 		steps:  
 			- name: Checkout
