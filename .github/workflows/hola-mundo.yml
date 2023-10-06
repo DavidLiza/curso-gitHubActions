@@ -5,6 +5,7 @@ on:
     branches: [ "aprendiendo-github-actions" ]   
 jobs:
   hola-mundo:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3    
