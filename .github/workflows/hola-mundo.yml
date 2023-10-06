@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3    
-      - name: Definir variable
+      - name: Definir-variable
         run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
-      - name: Correr Script       
+      - name: Correr-Script       
         run: python holaMundo.py 
