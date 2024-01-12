@@ -1,6 +1,6 @@
 
 name: Triggers
-run-name: Estoy Aprendiendo a usar diferentes Triggers
+run-name: ¡Estoy aprendiendo a usar diferentes Triggers!
 on:
   push:
     branches:
@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
     inputs:
       lenguaje_favorito:
-        description: "Lenguaje Favorito"
+        description: 'Lenguaje Favorito'
         default: Python
         required: true
         type: choice
@@ -24,7 +24,7 @@ on:
           - Javascript
           - Go
       nombre:
-        description: "Tu nombre"
+        description: 'Tu nombre'
         default: Juan
         required: true
         type: string
