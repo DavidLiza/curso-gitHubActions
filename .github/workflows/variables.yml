@@ -12,7 +12,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   name: githubVariable
-                run: echo Mi nombre en este repo es ${{ env.NOMBRE }} o  $NOMBRE
+                run: echo Mi nombre en este repo es ${{ vars.NOMBRE }} o  $NOMBRE
             -   name: workflowVar
                 run: echo Una variable puede ser  ${{ env.mascot }} y es $super_duper_var
             -   name: localEnvVars
