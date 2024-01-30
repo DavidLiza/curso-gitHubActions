@@ -1,0 +1,33 @@
+name: contextos
+run-name: Aprendiendo a Usar Contextos 
+on:
+    push:
+        branches: [ "aprendiendo-github-actions" ]   
+env:
+    mascot: Mona
+    super_duper_var: totally_awesome
+    env_var: ${{ vars.ENV_CONTEXT_VAR }}
+jobs:
+    misExpresiones:
+        if: ${{ github.event_name != 'push' && contains(github.ref,'aprendiendo') }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: env_github
+              run: echo ${{ github.actor }} pusheo un cambio
+            - name: env_env
+              run: echo Los atributos de environmente ${{ env.mascot }}
+            - name: env_vars
+              run: echo Variables de repo, org, or env [ ${{ vars.RUNNER  }} ] if not , empty string 
+            - name: env_jobs
+              run: echo This Job is running on ${{ job.runs-on }} and status is ${{ job.status}}
+            - name: env_local_env
+              env:
+                mascot: Octocat
+              run: echo 'Hi ${{ env.mascot }}'
+
+    envExtraTest:
+        runs-on: ubuntu-latest
+        env:
+            mascot: Tux
+        steps:
+            - run: echo 'Hi ${{ env.mascot }}'  # Hi Tux
