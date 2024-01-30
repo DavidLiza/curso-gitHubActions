@@ -9,7 +9,7 @@ env:
     env_var: ${{ vars.ENV_CONTEXT_VAR }}
 jobs:
     misExpresiones:
-        if: ${{ github.event_name != 'push' && contains(github.ref,'aprendiendo') }}
+        if: ${{ github.event_name == 'push' && contains(github.ref,'aprendiendo') }}
         runs-on: ubuntu-latest
         steps:
             - name: env_github
