@@ -1,0 +1,21 @@
+name: variables
+run-name: Aprendiendo de variables de github
+on:
+    push:
+        branches: [ "aprendiendo-github-actions" ] 
+env:
+    mascot: Mona
+    super_duper_var: totally_awesome
+jobs:
+    misExpresiones:
+        if: ${{ github.event_name == 'push' && contains(github.ref,'aprendiendo') }}
+        runs-on: ubuntu-latest
+        steps:
+            -   name: githubVariable
+                run: echo Mi nombre en este repo es ${{ env.NOMBRE }} o  $NOMBRE
+            -   name: workflowVar
+                run: echo Una variable puede ser  ${{ env.mascot }} y es $super_duper_var
+            -   name: localEnvVars
+                env:
+                    mascot: variables
+                run: echo 'Hi ${{ env.mascot }}'
